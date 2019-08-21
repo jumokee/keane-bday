@@ -1,0 +1,30 @@
+<template>
+	<div id="app">
+		<router-view />
+	</div>
+</template>
+
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Amatic SC", cursive;
+}
+
+p,
+span {
+	font-family: "Oswald", sans-serif;
+}
+
+#app {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	background-image: url("assets/img/handmadepaper.png");
+	height: 100vh;
+}
+</style>
