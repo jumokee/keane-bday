@@ -15,3 +15,11 @@
 		</div>
 	</div>
 </template>
+
+<script>
+export default {
+    props: {
+        confirm: Boolean
+    }
+}
+</script>

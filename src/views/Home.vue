@@ -1,6 +1,6 @@
 <template>
 	<div class="home container pt-3">
-		<rsvp-alert />
+		<rsvp-alert :confirm="confirm" />
 		<march-section />
 
 		<div class="main">
@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import MarchSection from "@/components/MarchSection.vue";
-import RsvpAlert from "@/components/RsvpAlert.vue";
+import MarchSection from "@/components/MarchSection";
+import RsvpAlert from "@/components/RsvpAlert";
 export default {
 	name: "home",
 	components: {
