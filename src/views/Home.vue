@@ -1,6 +1,6 @@
 <template>
 	<div class="home container pt-3">
-		<rsvp-alert :confirm="confirm" />
+		<rsvp-alert :confirm="isConfirm" />
 		<march-section />
 
 		<div class="main">
@@ -63,10 +63,10 @@ export default {
 		RsvpAlert,
 		EmailModal
 	},
-	data() {
-		return {
-			confirm: false
-		};
+	computed: {
+		isConfirm: function() {
+			return this.$route.params.confirm;
+		}
 	}
 };
 </script>
