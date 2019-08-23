@@ -14,7 +14,9 @@
 				<img src="../assets/img/march4.svg" />
 			</div>
 			<div class="col marcher">
-				<img src="../assets/img/march5.svg" />
+				<router-link class="link" :to="{name: 'admin'}">
+					<img src="../assets/img/march5.svg" />
+				</router-link>
 			</div>
 		</div>
 	</div>
@@ -25,6 +27,9 @@ export default {};
 </script>
 
 <style scoped>
+.link:hover {
+	cursor: default;
+}
 .marchers {
 	align-items: center;
 }

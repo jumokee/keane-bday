@@ -1,7 +1,7 @@
 <template>
 	<div id="admin" class="container-fluid">
 		<h1>RSVP List</h1>
-		<a href="/">Home</a>
+		<router-link :to="{name: 'home'}">Home</router-link>
 		<div>
 			<h4>Total Guest Count: {{this.totalGuests()}}</h4>
 		</div>
