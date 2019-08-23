@@ -13,7 +13,7 @@
 					<img class="d-inline crown-img animated tada delay-3s" src="../assets/img/crown.svg" />
 				</div>
 			</div>
-			<div class="card mt-3 mx-md-5">
+			<div class="card shadow mt-3 mx-md-5">
 				<div class="card-body">
 					<h3 class="card-title">Please Join Us To Celebrate</h3>
 					<div class="card-text">

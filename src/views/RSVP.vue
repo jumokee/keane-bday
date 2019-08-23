@@ -1,9 +1,9 @@
 <template>
 	<div id="rsvp" class="container">
 		<h2 class="pt-3">RSVP Here</h2>
-		<form @submit.prevent class="text-left bg-white p-3 mx-2">
+		<form @submit.prevent class="shadow text-left bg-white p-3 mx-2">
 			<div class="form-group">
-				<label for="email-input">Email:</label>
+				<label for="email-input" class="mb-0">Email:</label>
 				<input
 					type="email"
 					class="form-control"
@@ -14,7 +14,7 @@
 				/>
 			</div>
 			<div class="form-group">
-				<label for="name-input">Name:</label>
+				<label for="name-input" class="mb-0">Name:</label>
 				<input
 					type="input"
 					class="form-control"
@@ -24,7 +24,7 @@
 					required
 				/>
 			</div>
-			<div class="form-row">
+			<div class="form-row mx-3">
 				<div class="col">
 					<label class="mb-0">Attending?</label>
 					<div class="form-check">
@@ -72,7 +72,7 @@
 					value="Submit"
 				/>
 			</div>
-			<p class="text-center mischief pt-4 m-auto">
+			<p class="text-center mischief pt-3 m-auto">
 				<img src="../assets/img/mischief.svg" />
 			</p>
 		</form>
@@ -92,6 +92,7 @@ export default {
 		emailAddress: String
 	},
 	created() {
+		this.rsvp.email = this.emailAddress;
 		this.fetchAllRsvps();
 	},
 	methods: {
@@ -102,6 +103,7 @@ export default {
 				})
 				.then(rsvps => {
 					this.rsvps = rsvps;
+					console.log(rsvps);
 					this.handleFilter();
 				});
 		},
@@ -109,26 +111,42 @@ export default {
 			this.rsvps.forEach(rsvp => {
 				if (rsvp.email == this.emailAddress) {
 					this.rsvp = rsvp;
-					console.log(rsvp);
+					console.log(this.rsvp);
 				}
 			});
 		},
 		submitRsvp() {
-			if (rsvp.id) {
+			if (!this.rsvp.id) {
 				this.postRsvp();
 			} else {
 				this.putRsvp();
 			}
 		},
 		postRsvp() {
-			this.$router.push({ name: "home", params: { confirm: true } });
+			console.log("post");
+			fetch(this.API_URL + "/rsvps", {
+				method: "POST",
+				body: JSON.stringify(this.rsvp),
+				headers: {
+					"Content-Type": "application/json"
+				}
+			}).then(this.$router.push({ name: "home", params: { confirm: true } }));
 		},
-		putRsvp() {}
+		putRsvp() {
+			console.log("put");
+			fetch(this.API_URL + "/rsvps/" + this.rsvp.id, {
+				method: "PUT",
+				body: JSON.stringify(this.rsvp),
+				headers: {
+					"Content-Type": "application/json"
+				}
+			}).then(this.$router.push({ name: "home", params: { confirm: true } }));
+		}
 	}
 };
 </script>
 <style scoped>
 .mischief {
-	width: 30%;
+	width: 40%;
 }
 </style>
