@@ -1,8 +1,18 @@
 <template>
 	<div id="app">
+		<march-section />
 		<router-view />
 	</div>
 </template>
+
+<script>
+import MarchSection from "@/components/MarchSection";
+export default {
+	components: {
+		MarchSection
+	}
+};
+</script>
 
 <style>
 h1,

@@ -147,6 +147,6 @@ export default {
 </script>
 <style scoped>
 .mischief {
-	width: 40%;
+	width: 30%;
 }
 </style>

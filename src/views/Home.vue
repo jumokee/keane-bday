@@ -1,7 +1,6 @@
 <template>
 	<div class="home container pt-3">
 		<rsvp-alert :confirm="isConfirm" />
-		<march-section />
 
 		<div class="main">
 			<div class="row justify-content-center">
