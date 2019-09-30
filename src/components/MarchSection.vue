@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<div class="row marchers align-items-center">
+		<div class="row marchers align-items-center mx-auto">
 			<div class="col marcher">
 				<img src="../assets/img/march1.svg" />
 			</div>
@@ -32,6 +32,12 @@ export default {};
 }
 .marchers {
 	align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+	.marchers {
+		width: 75%;
+	}
 }
 
 .marchers :nth-child(1) {

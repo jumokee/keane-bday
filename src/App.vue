@@ -1,7 +1,9 @@
 <template>
 	<div id="app">
-		<march-section />
-		<router-view />
+		<div class="container">
+			<march-section />
+			<router-view />
+		</div>
 	</div>
 </template>
 
@@ -35,6 +37,6 @@ span {
 	text-align: center;
 	color: #2c3e50;
 	background-image: url("assets/img/handmadepaper.png");
-	height: 100vh;
+	height: 1300px;
 }
 </style>
