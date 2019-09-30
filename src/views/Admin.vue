@@ -46,7 +46,7 @@ export default {
 	data() {
 		return {
 			API_URL: "https://5d4732e1992ea9001444c7f9.mockapi.io/api/",
-			rsvps: {}
+			rsvps: []
 		};
 	},
 	methods: {
@@ -57,6 +57,11 @@ export default {
 				})
 				.then(rsvps => {
 					this.rsvps = rsvps;
+					let emails = "";
+					rsvps.forEach(rsvp => {
+						emails += rsvp.email + ", ";
+					});
+					console.log(emails);
 				});
 		},
 		totalGuests() {
